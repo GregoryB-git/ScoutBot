@@ -52,8 +52,8 @@ class HumanPlayer(Player):
                     print("Invalid input. Try again.")
             elif action == "scout" and "scout" in possible_actions:
                 try:
-                    board_card_position = int(input("Enter board card position to scout (first or last card): "))
-                    if board_card_position == 0 or board_card_position == len(game_state.board) - 1:
+                    board_card_position = int(input("Enter board card position to scout (0 for first, -1 for last): "))
+                    if board_card_position == 0 or board_card_position == -1:
                         position = int(input("Enter position in hand to place the scouted card (between two cards): "))
                         flip = input("Flip card? (yes or no): ").strip().lower() == "yes"
                         if position >= 0 and position <= len(self.hand):
